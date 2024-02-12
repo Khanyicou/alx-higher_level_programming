@@ -1,19 +1,15 @@
 #!/usr/bin/node
 
-function factorial(number) {
+function factorial(n) {
   let result = 1;
-  for (let i = 1; i <= number; i++) {
+  if (n < 0) {
+    return -1;
+  }
+  for (let i = 2; i <= n; i++) {
     result *= i;
   }
   return result;
 }
 
-const number = parseInt(process.argv[2]);
-
-if (!isNaN(number) && number >= 0) {
-  const result = factorial(number);
-  console.log(result);
-} else {
-  console.log(1);
-}
-
+const inputNumber = parseInt(process.argv[2]);
+console.log(factorial(inputNumber));
